@@ -1,0 +1,107 @@
+{
+  "version": 2,
+  "projects": {
+    "star-wars": {
+      "root": "apps/star-wars",
+      "sourceRoot": "apps/star-wars",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "root": "apps/star-wars",
+            "outputPath": "dist/apps/star-wars"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "star-wars:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "star-wars:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "star-wars:build:production"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/star-wars/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/star-wars"
+          ],
+          "options": {
+            "jestConfig": "apps/star-wars/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "star-wars-e2e": {
+      "root": "apps/star-wars-e2e",
+      "sourceRoot": "apps/star-wars-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/star-wars-e2e/cypress.json",
+            "tsConfig": "apps/star-wars-e2e/tsconfig.e2e.json",
+            "devServerTarget": "star-wars:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "star-wars:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/star-wars-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "star-wars"
+}
