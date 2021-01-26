@@ -17,6 +17,7 @@
   },
   "projects": {
     "star-wars": { "tags": [] },
-    "star-wars-e2e": { "tags": [], "implicitDependencies": ["star-wars"] }
+    "star-wars-e2e": { "tags": [], "implicitDependencies": ["star-wars"] },
+    "ui": { "tags": [] }
   }
 }

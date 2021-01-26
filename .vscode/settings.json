@@ -1,3 +1,5 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "typescriptHero.imports.multiLineWrapThreshold": 150,
+    "typescriptHero.imports.organizeOnSave": true,
 }

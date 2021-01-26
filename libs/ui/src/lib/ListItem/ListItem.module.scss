@@ -1,0 +1,7 @@
+.item {
+  background-color: unset;
+  cursor: pointer;
+  &:hover {
+    background-color: #4e5966;
+  }
+}

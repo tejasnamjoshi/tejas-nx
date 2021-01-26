@@ -1,3 +1,11 @@
+body {
+  background-color: #272b30;
+  color: white;
+}
+.color-yellow {
+  color: #ffe300;
+}
+
 .app {
   font-family: sans-serif;
   min-width: 300px;

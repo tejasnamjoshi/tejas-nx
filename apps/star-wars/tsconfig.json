@@ -9,7 +9,11 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tejas-nx/ui": ["../../libs/ui/src/index.ts"]
+    }
   },
   "files": [],
   "include": [],
