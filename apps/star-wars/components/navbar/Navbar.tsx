@@ -25,10 +25,6 @@ const navbarItems: NavbarItem[] = [
     href: '/films',
   },
   {
-    label: 'People',
-    href: '/people',
-  },
-  {
     label: 'Vehicles',
     href: '/vehicles',
   },

@@ -9,7 +9,7 @@ interface IListItemProps {
   urlPrefix: string;
 }
 
-const ListItem = (props: IListItemProps) => {
+export const ListItem = (props: IListItemProps) => {
   const splitUrl = props.url.split('/');
   const id = splitUrl[splitUrl.length - 2];
 

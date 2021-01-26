@@ -22,14 +22,12 @@ export function Vehicle() {
     <>
       <Notice text="Fetches data on client" />
       <div className={`card ${styles.card}`}>
-        <Suspense fallback={Loader}>
-          <div className="card-body">
-            <h4 className="card-title">{vehicle.name}</h4>
-            <h6 className="card-subtitle mb-2 text-muted">{`Model: ${vehicle.model}`}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{`Manufacturer: ${vehicle.manufacturer}`}</h6>
-            <h6 className="card-subtitle mb-2 text-muted">{`Crew: ${vehicle.crew}`}</h6>
-          </div>
-        </Suspense>
+        <div className="card-body">
+          <h4 className="card-title">{vehicle.name}</h4>
+          <h6 className="card-subtitle mb-2 text-muted">{`Model: ${vehicle.model}`}</h6>
+          <h6 className="card-subtitle mb-2 text-muted">{`Manufacturer: ${vehicle.manufacturer}`}</h6>
+          <h6 className="card-subtitle mb-2 text-muted">{`Crew: ${vehicle.crew}`}</h6>
+        </div>
       </div>
     </>
   );

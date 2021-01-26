@@ -1,14 +1,19 @@
 import { Notice } from '@tejas-nx/ui';
+import { IFilm } from 'api';
 import Link from 'next/link';
 import React from 'react';
 
 import styles from './Film.module.scss';
 
 interface IFilmProps {
-  film: any;
+  film: IFilm;
 }
 
 const Film = ({ film }: IFilmProps) => {
+  /* TODO: Remove this hack 
+    Added this hack because there is an error during the build process where the server produces the following error - title of undefined
+  */
+  if (!film) film = {} as IFilm;
   return (
     <>
       <Notice text="Fetches data on server and passes the data to the client in props using getStaticProps" />

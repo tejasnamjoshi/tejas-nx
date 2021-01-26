@@ -1,7 +1,6 @@
+import { fetchAllFilms, fetchSingleFilm } from 'api';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { QueryClient } from 'react-query';
-import { fetchSingleFilm } from 'api';
-import { fetchAllFilms } from 'api';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const queryClient = new QueryClient();
@@ -26,6 +25,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const film = await queryClient.fetchQuery(`fetchSingleFilm-${id}`, () =>
     fetchSingleFilm(id)
   );
+
   return { props: { film } };
 };
 

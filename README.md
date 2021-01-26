@@ -49,6 +49,9 @@ Libraries are sharable across libraries and applications. They can be imported f
 
 Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
+## Production Mode for NextJS Apps
+Run `nx build my-app` which will create an optimized production build. Then run `nx serve:production my-app` for a prod server. Navigate to http://localhost:4200/. The app will NOT automatically reload if you change any of the source files.
+
 ## Code scaffolding
 
 Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
