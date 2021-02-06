@@ -110,6 +110,120 @@
           }
         }
       }
+    },
+    "tejas-portfolio": {
+      "root": "apps/tejas-portfolio",
+      "sourceRoot": "apps/tejas-portfolio",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "root": "apps/tejas-portfolio",
+            "outputPath": "dist/apps/tejas-portfolio"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "tejas-portfolio:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "tejas-portfolio:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "tejas-portfolio:build:production"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/tejas-portfolio/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/tejas-portfolio"
+          ],
+          "options": {
+            "jestConfig": "apps/tejas-portfolio/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "chakra-ui": {
+      "root": "apps/chakra-ui",
+      "sourceRoot": "apps/chakra-ui",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "root": "apps/chakra-ui",
+            "outputPath": "dist/apps/chakra-ui"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "chakra-ui:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "chakra-ui:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "chakra-ui:build:production"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/chakra-ui/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/chakra-ui"
+          ],
+          "options": {
+            "jestConfig": "apps/chakra-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

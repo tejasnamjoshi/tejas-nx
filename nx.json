@@ -18,6 +18,8 @@
   "projects": {
     "star-wars": { "tags": [] },
     "star-wars-e2e": { "tags": [], "implicitDependencies": ["star-wars"] },
-    "ui": { "tags": [] }
+    "ui": { "tags": [] },
+    "tejas-portfolio": { "tags": [] },
+    "chakra-ui": { "tags": [] }
   }
 }
