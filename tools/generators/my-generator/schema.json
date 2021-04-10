@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "id": "NxReactApp",
+  "title": "Create a Custom React Component for Nx",
+  "type": "object",
+  "examples": [
+    {
+      "command": "g component my-component --project=mylib",
+      "description": "Generate a component in the mylib library"
+    }
+  ],
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "alias": "p",
+      "$default": {
+        "$source": "projectName"
+      },
+      "x-prompt": "What is the name of the project for this component?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the component.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the component?"
+    },
+    "style": {
+      "description": "The file extension to be used for style files.",
+      "type": "string",
+      "alias": "s",
+      "default": "scss",
+      "x-prompt": {
+        "message": "Which stylesheet format would you like to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "scss",
+            "label": "SASS(.scss)       [ http://sass-lang.com          ]"
+          },
+          {
+            "value": "none",
+            "label": "None"
+          }
+        ]
+      }
+    },
+    "skipTests": {
+      "type": "boolean",
+      "description": "When true, does not create \"spec.ts\" test files for the new component.",
+      "default": false
+    },
+    "directory": {
+      "type": "string",
+      "description": "Create the component under this directory (can be nested).",
+      "alias": "d",
+      "x-prompt": "What directory would you like to place the component in?"
+    }
+  },
+  "required": [
+    "name",
+    "project",
+    "directory",
+    "style"
+  ]
+}

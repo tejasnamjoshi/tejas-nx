@@ -1,0 +1,10 @@
+import { render, screen } from '@testing-library/react';
+
+import <%= className %> from '.';
+
+describe('<%= className %>', () => {
+  it('should render successfully', () => {
+    render(< <%= className %> />);
+    expect(screen.getByTestId("Welcome to <%= className %>!")).toBeTruthy();
+  });
+});

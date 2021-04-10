@@ -1,0 +1,16 @@
+
+/* eslint-disable-next-line */
+export interface <%= className %>Props {
+}
+const <%= className %> = (props: <%= className %>Props) => {
+  return (
+    <div
+      className="<%= className %>"
+      data-testid="<%= className %>"
+    >
+      <h1>Welcome to <%= name %>!</h1>
+    </div>
+  );
+};
+
+export default <%= className %>;
