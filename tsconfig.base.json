@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tejas-nx/ui": ["libs/ui/src/index.ts"]
+      "@tejas-nx/ui": ["libs/ui/src/index.ts"],
+      "@tejas-nx/tejas-ui": ["libs/tejas-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

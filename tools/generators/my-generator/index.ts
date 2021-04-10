@@ -28,6 +28,9 @@ function createComponentFiles(host, options) {
     if (options.skipTests && /.*spec.tsx/.test(c.path)) {
       host.delete(c.path);
     }
+    if (!options.hasStyles && c.path.endsWith(`.${options.style}`)) {
+      host.delete(c.path);
+    }
   }
 }
 
@@ -44,11 +47,13 @@ function normalizeOptions(host, options) {
     }
     const { sourceRoot: projectSourceRoot } = project;
     const directory = yield getDirectory(options);
+    const hasStyles = options.style !== 'none';
     return Object.assign(Object.assign({}, options), {
       directory,
       className,
       fileName: componentFileName,
       projectSourceRoot,
+      hasStyles,
     });
   });
 }

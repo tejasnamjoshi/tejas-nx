@@ -1,0 +1,23 @@
+import './styles.css';
+
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import React from 'react';
+
+function CustomApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Head>
+        <title>Welcome to react-hook-form-v7!</title>
+      </Head>
+      <div className="app">
+        <header className="flex"></header>
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </div>
+    </>
+  );
+}
+
+export default CustomApp;
