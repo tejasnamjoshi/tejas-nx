@@ -2,4 +2,5 @@
     "editor.formatOnSave": true,
     "typescriptHero.imports.multiLineWrapThreshold": 150,
     "typescriptHero.imports.organizeOnSave": true,
+    "liveServer.settings.multiRootWorkspaceName": "tejas-nx",
 }

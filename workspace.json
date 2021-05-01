@@ -1,10 +1,30 @@
 {
   "version": 2,
-  "cli": { "defaultCollection": "@nrwl/next" },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
   "defaultProject": "star-wars",
   "generators": {
-    "@nrwl/react": { "application": { "babel": true } },
-    "@nrwl/next": { "application": { "style": "scss", "linter": "eslint" } }
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
   },
   "projects": {
     "star-wars": {
@@ -14,16 +34,23 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/star-wars",
             "outputPath": "dist/apps/star-wars"
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": { "buildTarget": "star-wars:build", "dev": true },
+          "options": {
+            "buildTarget": "star-wars:build",
+            "dev": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "star-wars:build:production",
@@ -33,17 +60,23 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": { "buildTarget": "star-wars:build:production" }
+          "options": {
+            "buildTarget": "star-wars:build:production"
+          }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/star-wars/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/star-wars/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/star-wars"],
+          "outputs": [
+            "coverage/apps/star-wars"
+          ],
           "options": {
             "jestConfig": "apps/star-wars/jest.config.js",
             "passWithNoTests": true
@@ -64,12 +97,18 @@
             "devServerTarget": "star-wars:serve"
           },
           "configurations": {
-            "production": { "devServerTarget": "star-wars:serve:production" }
+            "production": {
+              "devServerTarget": "star-wars:serve:production"
+            }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["apps/star-wars-e2e/**/*.{js,ts}"] }
+          "options": {
+            "lintFilePatterns": [
+              "apps/star-wars-e2e/**/*.{js,ts}"
+            ]
+          }
         }
       }
     },
@@ -80,11 +119,17 @@
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": { "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"] }
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui"],
+          "outputs": [
+            "coverage/libs/ui"
+          ],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -99,16 +144,23 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/react-hook-form-v7",
             "outputPath": "dist/apps/react-hook-form-v7"
           },
-          "configurations": { "production": {} }
+          "configurations": {
+            "production": {}
+          }
         },
         "serve": {
           "executor": "@nrwl/next:server",
-          "options": { "buildTarget": "react-hook-form-v7:build", "dev": true },
+          "options": {
+            "buildTarget": "react-hook-form-v7:build",
+            "dev": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "react-hook-form-v7:build:production",
@@ -118,11 +170,15 @@
         },
         "export": {
           "executor": "@nrwl/next:export",
-          "options": { "buildTarget": "react-hook-form-v7:build:production" }
+          "options": {
+            "buildTarget": "react-hook-form-v7:build:production"
+          }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/react-hook-form-v7"],
+          "outputs": [
+            "coverage/apps/react-hook-form-v7"
+          ],
           "options": {
             "jestConfig": "apps/react-hook-form-v7/jest.config.js",
             "passWithNoTests": true
@@ -131,7 +187,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/react-hook-form-v7/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/react-hook-form-v7/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         }
       }
@@ -157,7 +215,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/react-hook-form-v7-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/react-hook-form-v7-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -170,15 +230,221 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/tejas-ui/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "libs/tejas-ui/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/tejas-ui"],
+          "outputs": [
+            "coverage/libs/tejas-ui"
+          ],
           "options": {
             "jestConfig": "libs/tejas-ui/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-custom-bootstrap": {
+      "root": "libs/shared/custom-bootstrap",
+      "sourceRoot": "libs/shared/custom-bootstrap/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/shared/custom-bootstrap",
+            "tsConfig": "libs/shared/custom-bootstrap/tsconfig.lib.json",
+            "project": "libs/shared/custom-bootstrap/package.json",
+            "entryFile": "libs/shared/custom-bootstrap/src/index.ts",
+            "external": [
+              "react",
+              "react-dom"
+            ],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/shared/custom-bootstrap/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/custom-bootstrap/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/custom-bootstrap"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/custom-bootstrap/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/custom-bootstrap/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/shared-custom-bootstrap",
+            "config": {
+              "configFolder": "libs/shared/custom-bootstrap/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "component-library-consumer": {
+      "root": "apps/component-library-consumer",
+      "sourceRoot": "apps/component-library-consumer/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/component-library-consumer",
+            "index": "apps/component-library-consumer/src/index.html",
+            "main": "apps/component-library-consumer/src/main.tsx",
+            "polyfills": "apps/component-library-consumer/src/polyfills.ts",
+            "tsConfig": "apps/component-library-consumer/tsconfig.app.json",
+            "assets": [
+              "apps/component-library-consumer/src/favicon.ico",
+              "apps/component-library-consumer/src/assets",
+              {
+                "glob": "*.scss",
+                "input": "libs/shared/custom-bootstrap/src/assets/",
+                "output": "/assets/"
+              }
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/custom-bootstrap/src/assets/"
+              ]
+            },
+            "styles": [
+              "apps/component-library-consumer/src/styles.scss"
+            ],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/component-library-consumer/src/environments/environment.ts",
+                  "with": "apps/component-library-consumer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "component-library-consumer:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "component-library-consumer:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/component-library-consumer/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/component-library-consumer"
+          ],
+          "options": {
+            "jestConfig": "apps/component-library-consumer/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "component-library-consumer-e2e": {
+      "root": "apps/component-library-consumer-e2e",
+      "sourceRoot": "apps/component-library-consumer-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/component-library-consumer-e2e/cypress.json",
+            "tsConfig": "apps/component-library-consumer-e2e/tsconfig.e2e.json",
+            "devServerTarget": "component-library-consumer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "component-library-consumer:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/component-library-consumer-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }

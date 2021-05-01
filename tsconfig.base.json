@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@tejas-nx/ui": ["libs/ui/src/index.ts"],
-      "@tejas-nx/tejas-ui": ["libs/tejas-ui/src/index.ts"]
+      "@tejas-nx/tejas-ui": ["libs/tejas-ui/src/index.ts"],
+      "@tejas/custom-bootstrap": ["libs/shared/custom-bootstrap/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

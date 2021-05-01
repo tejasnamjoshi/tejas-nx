@@ -1,0 +1,18 @@
+$theme-colors: (
+  'primary': #ff4136,
+  'danger': #ff4136,
+);
+
+$primary: #2d3c49;
+
+.App {
+  .btn {
+    border-radius: 0.5rem;
+  }
+
+  .btn-custom {
+    color: black;
+    background-color: #24a8aa;
+    border-color: #ebf2fa;
+  }
+}
