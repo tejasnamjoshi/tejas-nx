@@ -23,6 +23,9 @@
     }
   },
   "projects": {
+    "portfolio": {
+      "tags": []
+    },
     "react-hook-form-v7": {
       "tags": []
     },
