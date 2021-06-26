@@ -4,9 +4,6 @@
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "parserOptions": {
-        "project": "apps/react-hook-form-v7-e2e/tsconfig.*?.json"
-      },
       "rules": {}
     },
     {

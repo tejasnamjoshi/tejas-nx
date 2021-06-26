@@ -1,29 +1,47 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "tejas-nx",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   },
   "projects": {
-    "star-wars": { "tags": [] },
-    "star-wars-e2e": { "tags": [], "implicitDependencies": ["star-wars"] },
-    "ui": { "tags": [] },
-    "react-hook-form-v7": { "tags": [] },
+    "react-hook-form-v7": {
+      "tags": []
+    },
     "react-hook-form-v7-e2e": {
       "tags": [],
       "implicitDependencies": ["react-hook-form-v7"]
     },
-    "tejas-ui": { "tags": [] }
+    "star-wars": {
+      "tags": []
+    },
+    "star-wars-e2e": {
+      "tags": [],
+      "implicitDependencies": ["star-wars"]
+    },
+    "tejas-ui": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    }
   }
 }
