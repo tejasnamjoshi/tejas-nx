@@ -1,6 +1,6 @@
 import './navbar.module.scss';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import NavbarLink from '../navbar-link/navbar-link';
 
@@ -10,16 +10,12 @@ const links = [
     href: '/',
   },
   {
-    title: 'About Me',
-    href: '/aboutme',
+    title: 'About',
+    href: '/about',
   },
   {
     title: 'Blog',
     href: '/blog',
-  },
-  {
-    title: 'Projects',
-    href: '/projects',
   },
 ];
 
@@ -40,8 +36,13 @@ export function Navbar() {
       <button
         className="my-2 bg-gray-200 hover:bg-gray-300 active:bg-gray-400 cursor-pointer py-2 px-3 rounded dark:bg-gray-700 dark:hover:bg-gray-800 dark:active:bg-gray-900 text-black dark:text-white"
         onClick={handleModeChange}
+        aria-label="Toggle Dark Mode"
       >
-        {darkMode ? <i className="far fa-sun" /> : <i className="fas fa-sun" />}
+        {darkMode ? (
+          <i aria-hidden="true" className="far fa-sun" />
+        ) : (
+          <i aria-hidden="true" className="fas fa-sun" />
+        )}
       </button>
       <ul className="flex my-2 space-x-6">
         {links.map((link) => (

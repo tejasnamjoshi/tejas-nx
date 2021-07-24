@@ -8,7 +8,7 @@ export interface NavbarLinkProps {
 export function NavbarLink(props: NavbarLinkProps) {
   return (
     <a
-      className=" focus:underline hover:underline text-indigo-600 dark:text-white"
+      className="text-lg underline text-gray-500 hover:text-black dark:text-white dark:hover:text-gray-400"
       href={props.href}
     >
       {props.title}

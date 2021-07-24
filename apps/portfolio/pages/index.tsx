@@ -5,14 +5,14 @@ import SocialMediaCard from '../components/social-media-card/social-media-card';
 export function Index() {
   return (
     <div>
-      <h1 className="text-5xl text-left">Hey, I am Tejas</h1>
+      <h1 className="text-6xl text-left font-bold">Hey, I am Tejas</h1>
       <h2 className="text-md mt-4 dark:text-gray-400">
         I'm an engineer who is passionate about computers & programming. I have
         been working as a developer since 2016.
       </h2>
 
       <p className="my-8 text-center text-xl">
-        You can follow me on the below sites
+        You can reach out to me on the below sites
       </p>
       <div>
         <ul className="flex flex-wrap justify-center">

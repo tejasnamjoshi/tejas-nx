@@ -7,9 +7,14 @@ export interface SocialMediaCardProps {
 
 export function SocialMediaCard(props: SocialMediaCardProps) {
   return (
-    <a href={props.href} target="_blank" rel="noopener noreferrer">
-      <div className="border border-gray-500 rounded shadow-md p-12 cursor-pointer hover:shadow-2xl transform hover:scale-105  hover:text-indigo-700 transition duration-500 ease-in-out translate-x-0">
-        <i className={`fab fa-${props.type} text-7xl`}></i>
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${props.type}: ${props.href}`}
+    >
+      <div className="border border-gray-500 rounded shadow-md p-12 cursor-pointer hover:shadow-2xl transform hover:scale-105  hover:text-indigo-700 transition ease-in-out">
+        <i aria-hidden="true" className={`fab fa-${props.type} text-7xl`} />
       </div>
     </a>
   );
